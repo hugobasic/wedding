@@ -2,36 +2,143 @@
 <html>
   <head>
     <title>Bröllop - Cissi & Hugo</title>
-    <script>
-        // https://docs.google.com/forms/d/e/1FAIpQLSfay8OoWMWh_cjcLyPhIxLvtom_Oygy2gCQJCcNTloZtAVs3Q/formResponse?submit=Submit&usp=pp_url&entry.967727556=Hugo&entry.2071515300=hugo@basic.nu&entry.1707270256=123123&entry.375666338=K%C3%B6tt&entry.1451615110=R%C3%B6dbetsbiff+med+getostcreme+%26+hasselbackspotatis+(Veg)&entry.2070844235=H%C3%A5lla+tal
-    </script>
-        
-    </head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tangerine">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand">
+    <link rel="stylesheet" href="style.css" />
+  </head>
   <body>
+    <menu>
+      <li><a href="#form">Anmälan</a></li>
+      <li><a href="#hotels">Hotell</a></li>
+      <li><a href="#location">Plats</a></li>
+    </menu>
     <h1>Bröllop</h1>
-    <form>
-      <div>
-        <input type="text" placeholder="Namn" name="namn" />
-      </div>
-      <div>
-        <input type="text" placeholder="e-post" name="e-post" />
-      </div>
-      <div>
-        <input type="text" placeholder="Telefonnummer" name="telefonnummer" />
-      </div>
-      <div>
-        <input type="text" placeholder="Allergier" name="allergier" />
-      </div>
-      <div>
-        <input type="checkbox" placeholder="Matpreferens" name="matpreferens" />
-      </div>
-      <div>
-        <input
-          type="text"
-          placeholder="Information till toastmaster"
-          name="toastmasterInfo"
-        />
-      </div>
-    </form>
+    <section id="form">
+      <h2>Anmälan</h2>
+      <form id="wedding-form">
+        <div>
+          <input type="text" placeholder="Namn" name="name" required />
+        </div>
+        <div>
+          <input type="email" placeholder="e-post" name="mail" required />
+        </div>
+        <div>
+          <input type="tel" placeholder="Telefonnummer" name="phone" required />
+        </div>
+        <div>
+          <input type="text" placeholder="Allergier" name="allergies" />
+        </div>
+        <div>
+          Matpreferens
+          <div>
+          <input
+            type="radio"
+            placeholder="Matpreferens"
+            id="meat"
+            name="food"
+            value="Kött"
+            required
+          />
+          <label for="meat"
+            >Helstekt kronhjort med potatiskaka och rödvinssås</label
+          ></div>
+          <div>
+          <input
+            type="radio"
+            placeholder="Matpreferens"
+            id="vego"
+            name="food"
+            value="Veg"
+            required
+          />
+          <label for="vego"
+            >Rödbetsbiff med getostcreme och hasselbackspotatis</label
+          ></div>
+        </div>
+        <div>
+          <textarea
+            type="text"
+            rows="5"
+            cols="50"
+            placeholder="Information till toastmaster, ex. önskan om att hålla tal"
+            name="speech"
+          ></textarea>
+        </div>
+        <div id="form-message"></div>
+        <button type="submit">Skicka</button>
+      </form>
+    </section>
+    <section id="location">
+      <h2>Plats</h2>
+      <p>Räfsnäs Kungsgård | 647 91 | Mariefred</p>
+      <iframe
+        src="https://www.hitta.se/kartan/partner?mc=59.30719,17.24989,14&mt=%22Br%C3%B6llop%20-%20Cissi%20och%20Hugo%22&zoom=14"
+        frameborder="0"
+      ></iframe>
+    </section>
+    <section id="hotels">
+      <h2>Hotell</h2>
+      <ul>
+        <li>
+          <a href="http://www.gripsholms-vardshus.se/">Gripsholms Värdshus</a>
+        </li>
+        <li>
+          <a href="http://www.rodamagasinet.com/">Hotell Röda Magasinet </a>
+        </li>
+        <li>
+          <a href="http://www.djurgardsporten.se/"
+            >Vandrarhem Djurgårdsporten
+          </a>
+        </li>
+        <li>
+          <a href="https://www.gripsholmsbnb.se/"
+            >Gripsholms BnB (Stallgården)</a
+          >
+        </li>
+      </ul>
+    </section>
+
+    <script>
+      const keys = {};
+      function submitForm(e) {
+        e.preventDefault();
+        console.log("foaijsdofijaosdifjaosidjfoaijsdofiajsodifj");
+        const form = new FormData(e.target);
+
+        const fields = [
+          ["967727556", "name"],
+          ["2071515300", "mail"],
+          ["1707270256", "phone"],
+          ["1451615110", "food"],
+          ["375666338", "allergies"],
+          ["2070844235", "speech"],
+        ]
+          .map(
+            ([key, field]) =>
+              `&entry.${key}=${encodeURIComponent(form.get(field))}`
+          )
+          .join("");
+
+        const googleUrl =
+          "https://docs.google.com/forms/d/e/1FAIpQLSfay8OoWMWh_cjcLyPhIxLvtom_Oygy2gCQJCcNTloZtAVs3Q/formResponse?submit=Submit&usp=pp_url";
+
+        fetch(googleUrl + fields, { mode: "no-cors" })
+          .then(() => {
+            document.querySelector(
+              "#form-message"
+            ).textContent = `Välkommen ${form.get("name")}, du är nu anmäld!`;
+            e.target.reset();
+          })
+          .catch(() => {
+            document.querySelector(
+              "#form-message"
+            ).textContent = `Något gick fel, ladda om sidan och pröva igen!`;
+          });
+      }
+
+      document
+        .querySelector("#wedding-form")
+        .addEventListener("submit", submitForm, true);
+    </script>
   </body>
 </html>
