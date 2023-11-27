@@ -2,12 +2,12 @@
   --black: #333;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
   section {
     width: 90vw;
   }
 }
-@media screen and (min-width: 1001px) {
+@media screen and (min-width: 1201px) {
   section {
     width: 30vw;
     min-width: 500px;
