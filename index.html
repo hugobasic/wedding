@@ -2,8 +2,14 @@
 <html>
   <head>
     <title>Bröllop - Cissi & Hugo</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tangerine">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Tangerine"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Quicksand"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -17,7 +23,13 @@
       <h2>Anmälan</h2>
       <form id="wedding-form">
         <div>
-          <input type="text" placeholder="Namn" name="name" required />
+          <input
+            class="input-group__input"
+            type="text"
+            placeholder="Namn"
+            name="name"
+            required
+          />
         </div>
         <div>
           <input type="email" placeholder="e-post" name="mail" required />
@@ -31,6 +43,19 @@
         <div>
           Matpreferens
           <div>
+            <input
+              type="radio"
+              placeholder="Matpreferens"
+              id="vego"
+              name="food"
+              value="Veg"
+              checked
+              required
+            />
+            <label for="vego"
+              >Rödbetsbiff med getostcreme och hasselbackspotatis</label
+            >
+          </div>
           <input
             type="radio"
             placeholder="Matpreferens"
@@ -41,20 +66,9 @@
           />
           <label for="meat"
             >Helstekt kronhjort med potatiskaka och rödvinssås</label
-          ></div>
-          <div>
-          <input
-            type="radio"
-            placeholder="Matpreferens"
-            id="vego"
-            name="food"
-            value="Veg"
-            required
-          />
-          <label for="vego"
-            >Rödbetsbiff med getostcreme och hasselbackspotatis</label
-          ></div>
+          >
         </div>
+        <div></div>
         <div>
           <textarea
             type="text"
