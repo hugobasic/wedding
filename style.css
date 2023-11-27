@@ -2,17 +2,21 @@
   --black: #333;
 }
 
- @media screen and (max-width: 700px) {
+@media screen and (max-width: 1000px) {
   section {
     width: 90vw;
   }
- }
- @media screen and (min-width: 701px) {
+}
+@media screen and (min-width: 1001px) {
   section {
-    width: 25vw;
-    min-width: 500px
+    width: 30vw;
+    min-width: 500px;
   }
- } 
+}
+section {
+  border-top: 1px solid lightgray;
+  margin-bottom: 20px;
+}
 
 body {
   margin: 0;
@@ -48,7 +52,7 @@ menu li {
   font-family: Tangerine, serif;
   font-weight: 200;
   font-size: 1.5em;
-  padding: 0 20px
+  padding: 0 20px;
 }
 
 h1 {
@@ -56,9 +60,11 @@ h1 {
   font-weight: 200;
   font-size: 3em;
   margin-top: 70px;
+  margin-bottom: 5px;
 }
 
 h2 {
+  margin: 20px 0;
   font-family: Tangerine, serif;
   font-weight: 200;
   font-size: 2em;
@@ -76,6 +82,19 @@ button {
 }
 
 iframe {
-  width: 100%;
+  width: 90%;
   height: 40vh;
+  margin-top: 10px;
 }
+#location .transport {
+  margin-top: 10px
+}
+#location .material-symbols-outlined {
+  margin-top: 10px;
+  display: inline;
+}
+#location p {
+margin: 5px 0;
+display: inline;
+}
+
