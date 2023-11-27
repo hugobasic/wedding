@@ -2,6 +2,10 @@
   --black: #333;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @media screen and (max-width: 1200px) {
   section {
     width: 90vw;
@@ -20,6 +24,7 @@ section {
 
 body {
   margin: 0;
+  margin-bottom: 100px;
   padding: 0;
   font-size: 16px;
   display: flex;
@@ -75,6 +80,10 @@ textarea {
   padding: 10px;
   margin: 5px 0;
 }
+input::placeholder {
+  color: var(--black);
+  opacity: 85%;
+}
 
 button {
   padding: 10px;
@@ -86,15 +95,24 @@ iframe {
   height: 40vh;
   margin-top: 10px;
 }
+
+#food > div {
+  padding: 5px 10px;
+  border-left: 1px solid lightgray;
+}
+
 #location .transport {
-  margin-top: 10px
+  margin-top: 10px;
 }
 #location .material-symbols-outlined {
   margin-top: 10px;
   display: inline;
 }
 #location p {
-margin: 5px 0;
-display: inline;
+  margin: 5px 0;
+  display: inline;
 }
 
+#hotels div {
+  padding: 5px 0;
+}

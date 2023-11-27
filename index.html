@@ -19,8 +19,8 @@
   <body>
     <menu>
       <li><a href="#form">Anmälan</a></li>
-      <li><a href="#hotels">Hotell</a></li>
       <li><a href="#location">Plats</a></li>
+      <li><a href="#hotels">Hotell</a></li>
     </menu>
     <h1>Bröllop</h1>
     <section id="form">
@@ -44,7 +44,8 @@
         <div>
           <input type="text" placeholder="Allergier" name="allergies" />
         </div>
-        <div> Matpreferens:
+        <div id="food">
+          <div>Matpreferens:</div>
           <div>
             <input
               type="radio"
@@ -56,22 +57,24 @@
               required
             />
             <label for="vego"
-              >Rödbetsbiff med getostcreme och hasselbackspotatis (Vego) </label
+              >Rödbetsbiff med getostcreme och hasselbackspotatis (Vego)
+            </label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              placeholder="Matpreferens"
+              id="meat"
+              name="food"
+              value="Kött"
+              required
+            />
+            <label for="meat"
+              >Helstekt kronhjort med potatiskaka och rödvinssås</label
             >
           </div>
-          <input
-            type="radio"
-            placeholder="Matpreferens"
-            id="meat"
-            name="food"
-            value="Kött"
-            required
-          />
-          <label for="meat"
-            >Helstekt kronhjort med potatiskaka och rödvinssås</label
-          >
         </div>
-        <div></div>
+
         <div>
           <textarea
             type="text"
@@ -100,28 +103,24 @@
         <span class="material-symbols-outlined"> train </span>
         <p>
           Pendeltåg går regelbundet mellan Centralen i Stockholm och Läggsta
-          utanför Mariefred.
+          Station utanför Mariefred.
         </p>
       </div>
     </section>
     <section id="hotels">
       <h2>Hotell</h2>
-        <div>
-          <a href="http://www.gripsholms-vardshus.se/">Gripsholms Värdshus</a>
-        </d>
-        <div>
-          <a href="http://www.rodamagasinet.com/">Hotell Röda Magasinet </a>
-        </div>
-        <div>
-          <a href="http://www.djurgardsporten.se/"
-            >Vandrarhem Djurgårdsporten
-          </a>
-        </div>
-        <div>
-          <a href="https://www.gripsholmsbnb.se/"
-            >Gripsholms BnB (Stallgården)</a
-          >
-        </div>
+      <div>
+        <a href="http://www.gripsholms-vardshus.se/">Gripsholms Värdshus</a>
+      </div>
+      <div>
+        <a href="http://www.rodamagasinet.com/">Hotell Röda Magasinet </a>
+      </div>
+      <div>
+        <a href="http://www.djurgardsporten.se/">Vandrarhem Djurgårdsporten </a>
+      </div>
+      <div>
+        <a href="https://www.gripsholmsbnb.se/">Gripsholms BnB (Stallgården)</a>
+      </div>
     </section>
 
     <script>
